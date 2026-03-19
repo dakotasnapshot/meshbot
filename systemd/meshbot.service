@@ -1,0 +1,23 @@
+[Unit]
+Description=MeshBot — Meshtastic Auto-Responder
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=meshbot
+WorkingDirectory=/opt/meshbot
+
+ExecStart=/opt/meshbot/venv/bin/python /opt/meshbot/meshbot.py
+
+Restart=always
+RestartSec=5
+
+Environment=PATH=/opt/meshbot/venv/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONUNBUFFERED=1
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

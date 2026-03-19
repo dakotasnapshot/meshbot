@@ -1,0 +1,52 @@
+# MeshBot Configuration
+# Copy this file to config.yaml and edit for your setup.
+
+connection:
+  # Connection type: "tcp" (WiFi/network) or "serial" (USB)
+  type: "tcp"
+
+  # TCP settings (for WiFi-enabled radios like Heltec V3, T-Beam, etc.)
+  host: "192.168.1.100"
+  port: 4403
+
+  # Serial settings (for USB-connected radios)
+  # serial_port: "/dev/ttyUSB0"     # Linux
+  # serial_port: "/dev/cu.usbserial-0001"  # macOS
+  # serial_port: "COM3"             # Windows
+
+bot:
+  # Location for weather, sunrise/sunset
+  location: "Cushing, OK"
+
+  # NWS alert zone (find yours: https://alerts.weather.gov/)
+  # Leave empty to disable weather alerts
+  nws_zone: "OKC081"
+
+  # USGS earthquake bounding box: minlat, maxlat, minlon, maxlon
+  # Leave empty to disable earthquake monitoring
+  # Example covers Oklahoma + surrounding states:
+  quake_bounds: "33.5, 37.5, -103, -94.5"
+
+  # Network branding (shown in cmd list and info)
+  network_name: "OKMesh"
+  network_url: "https://okmesh.org"
+
+  # Timezone for the time command (IANA format)
+  timezone: "America/Chicago"
+
+  # Units: "imperial" (°F, mph) or "metric" (°C, km/h)
+  units: "imperial"
+
+  # Who can trigger commands:
+  #   "dm"      — only respond to direct messages (safest, recommended)
+  #   "all"     — respond to DMs and all channel broadcasts
+  #   "channel" — respond to DMs and specific channels (set channels below)
+  respond_to: "dm"
+
+  # Which channels to monitor (only used when respond_to is "channel")
+  # channels:
+  #   - 0  # Primary / LongFast
+  #   - 1  # Secondary
+
+  # Custom MOTD (overrides auto-generated info response)
+  # motd: "Welcome to MyMesh! Type cmd for commands."
