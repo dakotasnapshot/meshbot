@@ -1,5 +1,7 @@
 # 🤖 MeshBot — Meshtastic Auto-Responder
 
+Maintained personally by [Dakota Cole (@dakotasnapshot)](https://github.com/dakotasnapshot).
+
 A lightweight Python bot for [Meshtastic](https://meshtastic.org/) mesh radios. Responds to keyword commands with weather, earthquake data, NWS alerts, and more — all over the mesh network.
 
 No cloud services. No API keys. No Matrix required. Just a radio and a computer.
